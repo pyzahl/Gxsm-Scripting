@@ -1,4 +1,6 @@
 import netCDF4 as nc
+### WARNING: THIS INSTANTLY RESCALES THE SCAN DIMESNIONS
+### NOTE: IT DOES NOT RESCALE THE XY-LOOKUPs yet! (ToDo)
 
 ## factors to rescale - - see below
 xy_rescale_by = 1.0
