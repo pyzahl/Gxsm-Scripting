@@ -14,11 +14,12 @@ def auto_slope(dir='x'):
 	if gxsm.waitscan(False) < 1:
 		print ('Please run a scan with more than 600 Points. Stop.')
 		return
-
 		
 	if dir == 'y':
 		print ('Rotating to -90...')
 		gxsm.set ("Rotation", "-90")
+	else:
+		gxsm.set ("Rotation", "0")
 
 	dzp=0.0
 	for i in range (0,6):
@@ -26,7 +27,7 @@ def auto_slope(dir='x'):
 		yn = y+2
 		while y < yn:
 			y =gxsm.waitscan(False)
-			if a < 1:
+			if y < 1:
 				print ('Please run a scan with more than 600 Points. Stop.')
 				return
 			time.sleep (1)
